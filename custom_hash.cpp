@@ -1,7 +1,51 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+#define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define ll long long 
+#define ull unsigned ll
+#define ld long double 
+#define pb push_back 
+#define pf push_front
+#define dll deque<ll> 
+#define vll vector<ll>
+#define vvll vector<vll> 
+#define pll pair<ll,ll> 
+#define vpll vector<pll>
+#define dpll deque<pll>
+#define mapll map<ll,ll>
+#define umapll umap<ll,ll>
+#define endl "\n" 
+#define all(v) v.begin(),v.end() 
+#define ms(a,x) memset(a,x,sizeof(a))
+#define loop(i,n) for(ll i=0;i<n;i++)
+#define ordered_set tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update>
 using namespace std;
-#define ll long long
-#define fast_az_fck ios_base::sync_with_stdio(false);cin.tie(NULL);
+using namespace __gnu_pbds;
+vector<string> split(const string& s, char c) {
+    vector<string> v; stringstream ss(s); string x;
+    while (getline(ss, x, c)) v.push_back(x); return move(v);
+}
+template<typename T, typename... Args>
+inline string arrStr(T arr, int n) {
+    stringstream s; s << "[";
+    for(int i = 0; i < n - 1; i++) s << arr[i] << ",";
+    s << arr[n - 1] << "]";
+    return s.str();
+}
+#define EVARS(args...) {__evars_begin(__LINE__); __evars(split(#args, ',').begin(), args);}
+inline void __evars_begin(int line) { cerr << "#" << line << ": "; }
+template<typename T> inline void __evars_out_var(vector<T> val) { cerr << arrStr(val, val.size()); }
+template<typename T> inline void __evars_out_var(T* val) { cerr << arrStr(val, 10); }
+template<typename T> inline void __evars_out_var(T val) { cerr << val; }
+inline void __evars(vector<string>::iterator it) { cerr << endl; }
+template<typename T, typename... Args>
+inline void __evars(vector<string>::iterator it, T a, Args... args) {
+    cerr << it->substr((*it)[0] == ' ', it->length()) << "=";
+    __evars_out_var(a);
+    cerr << "; ";
+    __evars(++it, args...);
+}
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         // http://xorshift.di.unimi.it/splitmix64.c
@@ -17,16 +61,11 @@ struct custom_hash {
     }
 };
 //template<class T, class H>using umap=unordered_map<T,H,custom_hash>;
-int main()
+//template<class T>using uset=unordered_set<T,custom_hash>;
+int32_t main()
 {
-    fast_az_fck
-    unordered_map<ll,vector<ll>,custom_hash>mp;
-    mp[1].push_back(10);mp[1].push_back(20);mp[1].push_back(30);
-    mp[2].push_back(70);mp[3].push_back(90);
-    for(auto it1:mp)
-    {
-        for(auto it:it1.second)
-            cout<<it<<" ";
-        cout<<"\n";
-    }
+    clock_t clk = clock();
+    fio
+    //cerr << '\n'<<"Time (in s): " << double(clock() - clk) * 1.0 / CLOCKS_PER_SEC << '\n';
+    return 0;
 }
