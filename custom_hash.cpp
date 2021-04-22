@@ -14,11 +14,11 @@
 #define vpll vector<pll>
 #define dpll deque<pll>
 #define mapll map<ll,ll>
-#define umapll umap<ll,ll>
-#define endl "\n" 
+#define umapll unordered_map<ll,ll,custom_hash>
+#define nl "\n" 
 #define all(v) v.begin(),v.end() 
 #define ms(a,x) memset(a,x,sizeof(a))
-#define loop(i,n) for(ll i=0;i<n;i++)
+#define fr(aa,bb) for(ll i=aa;i<=bb;i++)
 #define ordered_set tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update>
 using namespace std;
 using namespace __gnu_pbds;
@@ -67,5 +67,6 @@ int32_t main()
     clock_t clk = clock();
     fio
     //cerr << '\n'<<"Time (in s): " << double(clock() - clk) * 1.0 / CLOCKS_PER_SEC << '\n';
+    
     return 0;
 }
