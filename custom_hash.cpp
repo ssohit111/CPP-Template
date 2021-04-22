@@ -67,6 +67,11 @@ int32_t main()
     clock_t clk = clock();
     fio
     //cerr << '\n'<<"Time (in s): " << double(clock() - clk) * 1.0 / CLOCKS_PER_SEC << '\n';
-    
+    ll t=1;
+    //cin>>t;
+    while(t--)
+    {
+        
+    }
     return 0;
 }
