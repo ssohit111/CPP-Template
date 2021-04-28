@@ -5,6 +5,7 @@
 #define ll long long 
 #define ull unsigned ll
 #define ld long double 
+#define mod 1000000007
 #define pb push_back 
 #define pf push_front
 #define dll deque<ll> 
@@ -21,6 +22,9 @@
 #define fr(aa,bb) for(ll i=aa;i<=bb;i++)
 #define ordered_set tree<ll, null_type,less<ll>, rb_tree_tag,tree_order_statistics_node_update>
 using namespace std;
+#pragma GCC target ("avx2")
+#pragma GCC optimization ("O3")
+#pragma GCC optimization ("unroll-loops")
 using namespace __gnu_pbds;
 vector<string> split(const string& s, char c) {
     vector<string> v; stringstream ss(s); string x;
@@ -62,9 +66,25 @@ struct custom_hash {
 };
 //template<class T, class H>using umap=unordered_map<T,H,custom_hash>;
 //template<class T>using uset=unordered_set<T,custom_hash>;
-int32_t main()
+ll dmod(ll x){
+    return ((x+mod)%mod);
+}
+ll modular_power(ll x,ll y){
+    ll ans=1;
+    while(y){
+        if(y&1)ans=dmod(ans*x);
+        y/=2;
+        x=dmod(x*x);
+    }
+    return ans;
+}
+ll inv(ll x){
+    return modular_power(dmod(x),mod-2);
+}
+
+int main()
 {
-    clock_t clk = clock();
+    //clock_t clk = clock();
     fio
     //cerr << '\n'<<"Time (in s): " << double(clock() - clk) * 1.0 / CLOCKS_PER_SEC << '\n';
     ll t=1;
