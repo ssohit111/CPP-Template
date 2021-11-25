@@ -1,4 +1,6 @@
 #include<bits/stdc++.h>
+
+//macros
 #define fio ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #define ll long long
 #define ull unsigned ll
@@ -18,34 +20,15 @@
 #define all(v) v.begin(),v.end()
 #define ms(a,x) memset(a,x,sizeof(a))
 #define fr(a,b,c) for(ll a=b;a<=c;a++)
+#define frr(a,b,c) for(ll a=b;a>=c;a--)
 using namespace std;
+
+//gcc optimise
 #pragma GCC target ("avx2")
 #pragma GCC optimization ("O3")
 #pragma GCC optimization ("unroll-loops")
-vector<string> split(const string& s, char c) {
-    vector<string> v; stringstream ss(s); string x;
-    while (getline(ss, x, c)) v.push_back(x); return move(v);
-}
-template<typename T, typename... Args>
-inline string arrStr(T arr, int n) {
-    stringstream s; s << "[";
-    for (int i = 0; i < n - 1; i++) s << arr[i] << ",";
-    s << arr[n - 1] << "]";
-    return s.str();
-}
-#define EVARS(args...) {__evars_begin(__LINE__); __evars(split(#args, ',').begin(), args);}
-inline void __evars_begin(int line) { cerr << "#" << line << ": "; }
-template<typename T> inline void __evars_out_var(vector<T> val) { cerr << arrStr(val, val.size()); }
-template<typename T> inline void __evars_out_var(T* val) { cerr << arrStr(val, 10); }
-template<typename T> inline void __evars_out_var(T val) { cerr << val; }
-inline void __evars(vector<string>::iterator it) { cerr << endl; }
-template<typename T, typename... Args>
-inline void __evars(vector<string>::iterator it, T a, Args... args) {
-    cerr << it->substr((*it)[0] == ' ', it->length()) << "=";
-    __evars_out_var(a);
-    cerr << "; ";
-    __evars(++it, args...);
-}
+
+//custom hash
 struct custom_hash {
     static uint64_t splitmix64(uint64_t x) {
         // http://xorshift.di.unimi.it/splitmix64.c
@@ -60,8 +43,14 @@ struct custom_hash {
         return splitmix64(x + FIXED_RANDOM);
     }
 };
-//template<class T, class H>using umap=unordered_map<T,H,custom_hash>;
-//template<class T>using uset=unordered_set<T,custom_hash>;
+
+//operator overloading
+template<typename T> istream& operator >>(istream &in,vector<T> &v){ for(auto &x:v) in>>x; return in;}
+template<typename T> ostream& operator <<(ostream &out,const vector<T> &v){ for(auto &x:v) out<<x<<' '; return out;}
+template<typename T1,typename T2> istream& operator >>(istream &in,pair<T1,T2> &p){ in>>p.first>>p.second; return in;}
+template<typename T1,typename T2> ostream& operator <<(ostream &out,const pair<T1,T2> &p){ out<<p.first<<' '<<p.second; return out;}
+
+//basic used functions
 // ll fact[1000005];
 ll dmod(ll x) {
     return ((x + mod) % mod);
@@ -87,6 +76,7 @@ ll inv(ll x) {
 //     return ans;
 // }
 
+//input output file work
 void start() {
     fio
 #ifndef ONLINE_JUDGE
@@ -97,6 +87,7 @@ void start() {
 #endif
 }
 
+//main function
 int main()
 {
     start();
@@ -107,7 +98,7 @@ int main()
     //     fact[i]=(fact[i-1]*i)%mod;
     // }
     ll tt = 1;
-    cin >> tt;
+    // cin >> tt;
     while (tt--)
     {
         
